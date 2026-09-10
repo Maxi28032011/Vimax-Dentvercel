@@ -1,13 +1,7 @@
 import { createClient } from "@supabase/supabase-js";
 
-const url = import.meta.env.VITE_SUPABASE_URL || "https://chcrlwavdagwbezpplob.supabase.co";
+// URL directa y completa de tu proyecto de Supabase
+const url = "https://chcrlwavdagwbezpplob.supabase.co";
 const anonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
-
-if (!url || !anonKey) {
-  // eslint-disable-next-line no-console
-  console.error(
-    "Faltan VITE_SUPABASE_URL / VITE_SUPABASE_ANON_KEY. Configúralas en tu archivo .env (ver .env.example)."
-  );
-}
 
 export const supabase = createClient(url, anonKey);
